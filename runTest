@@ -1,4 +1,7 @@
 #!/bin/bash
 
+cd /Users/h.sabri/Library/Android/sdk/emulator
+./emulator -avd Pixel_4_API_29
 #adb shell rm -r /sdcard/allure-results
+cd /Users/h.sabri/StudioProjects/testing-samples/ui/espresso/BasicSample
 ./gradlew app:connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.example.android.testing.espresso.BasicSample.$1
