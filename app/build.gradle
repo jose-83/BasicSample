@@ -4,17 +4,21 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+repositories {
+    mavenCentral()
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.example.android.testing.espresso.BasicSample"
-        minSdkVersion 14
+        minSdkVersion 18
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "io.qameta.allure.android.runners.AllureAndroidJUnitRunner"
     }
     lintOptions {
         abortOnError false
@@ -38,6 +42,7 @@ dependencies {
     // App dependencies
     implementation 'androidx.annotation:annotation:' + rootProject.androidxAnnotationVersion;
     implementation 'com.google.guava:guava:' + rootProject.guavaVersion
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1'
 
     // Testing-only dependencies
     androidTestImplementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -47,6 +52,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit-ktx:' + rootProject.extJUnitVersion
     androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
+
+    androidTestImplementation "io.qameta.allure:allure-kotlin-model:$rootProject.allureVersion"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-commons:$rootProject.allureVersion"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-junit4:$rootProject.allureVersion"
+    androidTestImplementation "io.qameta.allure:allure-kotlin-android:$rootProject.allureVersion"
 
     testImplementation 'androidx.test:core:' + rootProject.coreVersion;
     testImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion

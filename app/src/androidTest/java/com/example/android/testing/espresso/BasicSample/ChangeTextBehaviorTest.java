@@ -28,6 +28,11 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
+import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.android.AllureScreenshotKt;
+import io.qameta.allure.android.rules.ScreenshotRule;
+import io.qameta.allure.kotlin.Description;
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
@@ -43,7 +48,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
  * <p>
  * Note that there is no need to tell Espresso that a view is in a different {@link Activity}.
  */
-@RunWith(AndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
+@RunWith(AllureAndroidJUnit4.class)
 @LargeTest
 public class ChangeTextBehaviorTest {
 
