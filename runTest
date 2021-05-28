@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#adb shell rm -r /sdcard/allure-results
+./gradlew app:connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.example.android.testing.espresso.BasicSample.$1
