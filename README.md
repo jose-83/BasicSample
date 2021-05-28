@@ -1,4 +1,4 @@
-# Basic sample for Espresso
+# Basic sample for Espresso Integration with allure-kotlin
 
 *If you are new to Espresso, try this sample first.*
 
